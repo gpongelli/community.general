@@ -1,0 +1,13 @@
+{
+    "image": "quay.io/ansible/azure-pipelines-test-container:4.0.1",
+    "workspaceMount": "source=${localWorkspaceFolder}/,target=/ansible_collections/community/general,type=bind",
+    "workspaceFolder": "/ansible_collections/community/general",
+    "postCreateCommand": "pip install https://github.com/ansible/ansible/archive/devel.tar.gz --disable-pip-version-check",
+    "features": {
+        "docker-in-docker": {
+            "version": "latest",
+            "moby": true,
+            "dockerDashComposeVersion": "v1"
+        }
+    }
+}
